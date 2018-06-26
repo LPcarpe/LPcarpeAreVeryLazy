@@ -1,0 +1,88 @@
+dynamic             动态的、动力的、动态、动力
+
+range               范围、幅度、值域
+
+exports             出口商品、输出额
+
+separator           分隔符、分离器、隔板
+
+loop                环、循环、回路、回环
+
+capturing           捕获、捕捉、屏幕截图功能
+
+phase               相位、阶段
+
+callee              被召者
+
+strict              严格的、绝对的、严密的
+
+hoist               起重机、升起、吊起
+
+expression          表现、表示、表达
+
+invoked             援用、叫唤
+
+anonymous           匿名的
+
+statement           声明、称述、叙述
+
+drag                拖累、拖拉、拖
+
+instance            实例、例子、实体
+
+render              致使、着色
+
+sharp               急剧的、锋利的、锐利
+
+token               标记、令牌、代币、记号
+
+identify            认出、鉴定、识别、确认、认同
+
+website             网站
+
+framework            框架、结构、构架、骨架
+
+reveal              显示、透露、揭露、展现
+
+modal               模式的、情态的、形式的
+
+queue               队列
+
+stack               堆栈、栈
+
+heap                堆
+
+compressed          压缩的扁平的、被压缩的
+
+split               分离、使分离
+
+arguments           参数、命令行参数
+
+context             环境、上下文
+
+execution           执行、处决、执行上下文
+
+initialized        初始化、已初始化的
+
+static              静态的
+
+enumerable         可列举的
+
+configuration      可配置的、结构的
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

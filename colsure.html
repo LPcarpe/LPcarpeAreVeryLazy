@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+<script type="text/javascript">
+    window.onload = function(){
+        var oLi = document.getElementsByTagName('ul')[0].children;
+        for (let i = 0; i < oLi.length; i++){
+           oLi[i].onclick = function (i){
+             console.log(i);
+           }
+        }        
+    }
+</script>
+</head>
+<body>
+  <ul>
+    <li>index  00000</li>
+    <li>index  11111</li>
+    <li>index  22222</li>
+  </ul>
+</body>
+</html>

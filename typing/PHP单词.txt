@@ -1,0 +1,62 @@
+alias           别名、小名
+
+calendar        日历、历法
+
+collision       冲突、碰撞
+
+connection      连接、关系
+
+correspond      符合、一致
+
+decimal         小数的、十进制的
+
+deny            否定、否认、否决
+
+distinct        明显的、独特的、有区别的、清楚的
+
+duplicate       复制、副本、加倍
+
+engine          引擎
+
+extend          延伸、延长、推广、扩大、给予
+
+extension       延长、延期、扩大
+
+fatal           致命的、重大的、毁灭性的
+
+increase        增长、提高、增加
+
+info            信息、情报
+
+internal        内部的、内脏、本质
+
+operator        操作者、运算符、接线员
+
+protocol        协议、草案、拟定
+
+punctuation     标点、标点符号
+
+reference to    提及、参考、关于、提到
+
+resolution      分辨率、决议、决定、解决
+
+session         会议、会话、开会
+
+stuff           东西、材料、填充物
+
+trait           特性、特点、品质
+
+variable        变量、可变的
+
+123
+321
+132
+312
+1312
+890
+098
+809
+089
+0809
+cr
+re

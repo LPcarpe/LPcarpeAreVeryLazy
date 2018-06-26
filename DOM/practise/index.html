@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>slide Door</title>
+	<link rel="stylesheet" href="初始化代码.css">
+	<style>
+		#container{
+			position: relative;
+			height: 477px;
+			margin: 0 auto;
+			border-right: 1px solid #ccc;
+			border-bottom: 1px solid #ccc;
+			overflow: hidden;
+		}
+		#container img{
+			position: absolute;
+			display: block;
+			left: 0;
+			border-left: 1px solid #ccc;
+		}
+	</style>
+</head>
+<body>
+
+	<div id="container">
+		<img src="images/door1.png" alt="1080p垃圾" title="1080p垃圾" />
+		<img src="images/door2.png" alt="5.5寸四核" title="5.5寸四核" />
+		<img src="images/door3.png" alt="四核五寸" title="四核五寸" />
+		<img src="images/door4.png" alt="5.7寸机皇" title="5.7寸机皇" />
+	</div>
+
+<script>
+	window.onload = function() {
+		var oDiv = document.getElementById('container');
+		var aImg = oDiv.getElementsByTagName('img');
+		var imgWidth = aImg[0].offsetWidth;
+		var exposeWidth = 160;
+		var boxWidth = imgWidth + (aImg.length-1) * exposeWidth;
+
+		oDiv.style.width = boxWidth + 'px';
+
+		var translate = imgWidth - exposeWidth;
+
+		function setImgsPos() {
+			for(var i=1, len=aImg.length; i<len; i++) {
+				aImg[i].style.left = imgWidth + (i-1) * exposeWidth + 'px';
+			}
+		}
+
+		setImgsPos();
+
+		for (var i = 0; i < aImg.length; i++) {
+			(function (i){
+				aImg[i].onmouseover = function() {
+					setImgsPos();
+					for(var j=1; j<=i; j++) {
+						aImg[j].style.left = aImg[j].offsetLeft - translate + 'px';
+					}
+				};
+			})(i);
+		}
+	};
+</script>
+</body>
+</html>

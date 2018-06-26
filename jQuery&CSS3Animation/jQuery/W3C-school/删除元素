@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+  <head>
+    <title></title>
+    <meta charset="utf-8">
+    <style>
+        #div1{
+            width: 400px;
+            height: 110px;
+            background-color: yellow;
+            border: 1px solid black;
+            border-radius: 9px;
+            padding: 10px;
+        }
+    </style>
+    <script src="jQuery_v3.3.1.js"></script>
+    <script>
+        $(document).ready(function (){
+            $("#btn1").click(function (){
+                $("#div1").remove();
+            });
+            
+            $("#btn2").click(function (){
+                $("#div1").empty();
+            });
+            
+            $("#btn3").click(function (){
+                $("p").remove(".italic")
+            });
+        });
+    </script>
+  </head>
+  <body>
+    <div id="div1">
+        这是div中的文本
+        <p class="italic"><i>这是第一个段落</i></p>
+        <p>这是第二个段落</p>
+    </div>
+    <br/>
+    <button id="btn1">移除整个地v元素</button>
+    <button id="btn2">清空div里的元素</button>
+    <br/>
+    <button id="btn3">过滤性删除class为italic的p元素</button>
+  </body>
+</html>

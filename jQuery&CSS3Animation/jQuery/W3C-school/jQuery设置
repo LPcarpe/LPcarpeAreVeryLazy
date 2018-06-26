@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="jQuery_v3.3.1.js"></script>
+    <script>
+        $(document).ready(function (){
+            $("#btn1").click(function (){
+                $("#text1").text("hello world!");
+            });
+            $("#btn2").click(function (){
+                $("#text2").html("<b>hello world!</b>");
+            });
+            $("#btn3").click(function (){
+                $("#text3 input").val("input被改变了");
+            });
+        });
+    </script>
+</head>
+<body>
+    <p id="text1">这是地一个段落</p>
+    <p id="text2">这是第二个段落</p>
+    <p id="text3">第三个段落：<input value="来改变我吧" /></p>
+    <button id="btn1">改变1</button>
+    <button id="btn2">改变2</button>
+    <button id="btn3">改变input</button>
+</body>
+
+</html>

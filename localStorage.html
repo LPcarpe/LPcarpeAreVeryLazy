@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		var ta;
+		var btn;
+		window.onload = function() {
+			ta =document.getElementById('ta');
+			if(localStorage.text){
+				ta.value = localStorage.text;
+			}
+
+			btn = document.getElementById('btn1');
+			btn.onclick = function() {
+				localStorage.text = ta.value;
+			};
+		};
+	</script>
+</head>
+<body>
+	<textarea style="width: 200px; height: 200px;" id="ta"></textarea>
+	<button id="btn1">save</button>
+</body>
+</html>

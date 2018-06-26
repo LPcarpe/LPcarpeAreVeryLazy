@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jQuery_v3.3.1.js"></script>
+    <script>
+        $(document).ready(function (){
+            $("#btn1").click(function (){
+                $("p").append("<b>追加文本</b>");
+            });
+            
+            $("#btn2").click(function (){
+                $("ol").append("<li>追加列表</li>")
+            });
+            
+            $("#btn3").click(function (){
+                $("p").prepend("<b>在开头追加文本</b>");
+            });
+            
+            $("#btn4").click(function (){
+                $("ol").prepend("<li>在表头添加元素</li>");
+            });
+            
+            $("#btn5").click(function (){
+                var txt1 = "<p>文本1</p>";
+                var txt2 = $("<p></p>").text("文本2");
+                var txt3 = document.createElement("p");
+                txt3.innerHTML = "文本3";
+                $("body").append(txt1,txt2,txt3);
+            });
+            
+            $("#btn6").click(function (){
+                var txt1 = "<p>文本1</p>";
+                var txt2 = $("<p></p>").text("文本2");
+                var txt3 = document.createElement("p");
+                txt3.innerHTML = "文本3";
+                $("body").prepend(txt1,txt2,txt3);
+            });
+        });
+    </script>
+    
+</head>
+<body>
+    <P>这是一个文本</p>
+    <P>这是另一个文本</p>
+    
+    <ol>
+        <li>List item 1</li>
+        <li>List item 2</li>
+        <li>List item 3</li>
+    </ol>
+    
+    <button id="btn1">添加文本</button>
+    <button id="btn2">添加列表</button>
+    <br/>
+    <button id="btn3">在开头添加元素</button>
+    <button id="btn4">在表头添加元素</button>
+    <br/>
+    <button id="btn5">添加多个元素</button>
+    <button id="btn6">在表头添加多个元素</button>
+    
+</body>
+</html>

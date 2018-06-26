@@ -1,0 +1,12 @@
+@charset "utf-8";
+/* CSS Document */
+/* css reset www.admin10000.com */
+#container{
+	list-style-type:none;
+	}
+
+#big ul {list-style-type:none; }
+#big h1{margin-top:0; margin-bottom:0;}
+a{  
+   text-decoration:none;
+    }

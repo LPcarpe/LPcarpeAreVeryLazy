@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        #box{
+            width: 200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #3c0;
+        }
+    </style>
+    <script src="jQuery_v3.3.1.js"></script>
+    <script>
+        $(document).ready(function (){
+            $("#btn1").click(function (){
+                $("#div1").slideUp(1000);
+            });
+            $("#btn2").click(function (){
+                $("#div1").slideDown(1000);
+            });
+            $("#btn3").click(function (){
+                $("#div1").slideToggle(1000);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="box">
+       <input type="button" id="btn1" value="向上" />
+       <input type="button" id="btn2" value="向下" />
+       <input type="button" id="btn3" value="向上向下" />
+       <div id="div1"></div>
+    </div>
+</body>
+</html>

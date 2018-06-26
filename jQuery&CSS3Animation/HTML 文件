@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title></title>
+    <meta content="">
+    <style>
+      #box{
+        width: 720px;
+        height: 1280px;
+        background: red;
+        margin: 0 auto;
+      }
+      .div1{
+        width: 720px;
+        height: 100px;
+        background: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="box">
+      <div class="div1"></div>
+      <div class="div2"></div>
+    </div>
+    
+  </body>
+</html>

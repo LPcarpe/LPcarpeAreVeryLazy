@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>sessionstorage</title>
+	<script>
+		var num = 0;
+		var txt;
+		var btn;
+		window.onload = function() {
+			txt = document.getElementById('txt');
+			btn = document.getElementById('btn1');
+
+			if(sessionStorage.num){
+				num = sessionStorage.num;
+			}
+			else{
+				num = 0;
+			}
+			
+			btn.onclick = function() {
+				num++;
+				sessionStorage.num = num;
+				showNum();
+			}
+		}
+		function showNum() {
+			txt.innerHTML = num;
+		}
+	</script>
+</head>
+<body>
+	<span id="txt"></span>
+	<button id="btn1">add</button>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>cookie的应用</title>
+	<style>
+		.moveBox{
+			position : absolute;
+			width: 200px;
+			height: 200px;
+			background-color: red;
+		}
+	</style>
+	<script>
+		function setCookie(c_name,value,expiredays)
+		{
+		var exdate=new Date();
+		exdate.setDate(exdate.getDate()+expiredays);
+		document.cookie=c_name+ "=" +escape(value)+
+		((expiredays==null) ? "" : ";expires="+exdate.toUTCString());
+		}
+
+		/*function getCookie(name){
+		 var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+		    if (arr = document.cookie.match(reg)){
+		        return (arr[2]);
+		    }else{
+		         return null;
+		    }      
+		}*/
+		function getCookie(c_name)
+		{
+		if (document.cookie.length>0)
+		  {
+		  c_start=document.cookie.indexOf(c_name + "=");
+		  if (c_start!=-1)
+		    { 
+		    c_start=c_start + c_name.length+1;
+		    c_end=document.cookie.indexOf(";",c_start);
+		    if (c_end==-1) c_end=document.cookie.length;
+		    return unescape(document.cookie.substring(c_start,c_end));
+		    } 
+		  }
+		return "";
+		}
+		function deleteCookie(name){
+		    setCookie(name, null, -1);
+		}
+
+		window.onload = function(){
+			var oDiv = document.getElementById('div1');
+			var xx = getCookie('x');
+			var yy = getCookie('y');
+			if(xx){
+				oDiv.style.left = xx + 'px';
+				oDiv.style.top = yy + 'px';
+			}
+			oDiv.onmousedown = function(ev){
+				var oEvent = ev || event;
+				var disX = oEvent.clientX - oDiv.offsetLeft;
+				var disY = oEvent.clientY - oDiv.offsetTop;
+
+				document.onmousemove = function (ev){
+					var oEvent = ev || event;
+					var l = oEvent.clientX - disX;
+					var t = oEvent.clientY - disY;
+					oDiv.style.left = l + 'px';
+					oDiv.style.top = t + 'px';
+
+				};
+
+				document.onmouseup = function (){
+					setCookie('x', oDiv.offsetLeft, 100);
+					setCookie('y', oDiv.offsetTop, 100);
+					document.onmousemove = null;
+					document.onmouseup = null;
+				};
+			};
+		};
+	</script>
+</head>
+<body>
+	<div id="div1" class="moveBox"></div>
+</body>
+</html>

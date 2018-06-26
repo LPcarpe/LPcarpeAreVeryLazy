@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>canvas祖玛小游戏</title>
+	</head>
+	<style type="text/css">
+		body{
+			background: black;
+		}
+		#c1{
+			background: white;
+		}
+		font{
+			color: white;
+			-webkit-touch-callout: none;  
+			-webkit-user-select: none;  
+			user-select: none;
+		}
+	</style>
+	
+	<script type="text/javascript">
+		window.onload = function(){
+			var oC = document.getElementById('c1');
+			var oGc = oC.getContext('2d');
+			var i = 0;
+			 
+			var yImg = new Image();
+			yImg.src = './person.png';
+			
+			var oBtn = document.getElementById("btn1");
+			var flag = false;
+			var oTimer = null;
+			var score = 0;
+			
+			oBtn.onclick = function (){
+				clearInterval(oTimer);
+				if(flag){
+					flag = false;
+					oBtn.value = "off";
+				}
+				else{
+					flag = true;
+					oBtn.value = "on";
+				}
+			}
+
+			yImg.onload = function(){
+				setInterval(function(){
+						
+						oGc.clearRect(0,0,oC.width,oC.height);
+						
+						oGc.beginPath();
+						oGc.arc(300,200,200,-90*Math.PI/180,180*Math.PI/180);
+						oGc.stroke();
+						
+						oGc.beginPath();
+						oGc.arc(250,200,150,180*Math.PI/180,360*Math.PI/180);
+						oGc.stroke();
+						
+						oGc.beginPath();
+						oGc.arc(400,200,20,0*Math.PI/180,360*Math.PI/180,false);
+						oGc.stroke();
+						//轨道绘制完毕
+						oGc.beginPath();
+						oGc.arc(i++,i++,20,0*Math.PI/180,360*Math.PI/180);
+						oGc.stroke();
+						
+						for(var i=0;i<ball.length;i++){
+							oGc.beginPath();
+							oGc.moveTo(ball[i].x,ball[i].y);
+							
+							oGc.arc(ball[i].x,ball[i].y,20,0*Math.PI/180,360*Math.PI/180,false);
+							oGc.fill();
+							
+						}
+						
+						oGc.save();  //变成独立的空间
+						oGc.translate(300,200);
+						oGc.rotate(iRolate); //旋转
+						oGc.translate(-40,-40);
+						oGc.drawImage(yImg,0,0 );
+						oGc.restore();  //结束
+						
+						
+						
+						for(var i=0;i<bullet.length;i++){
+							oGc.save();  //变成独立的空间
+							oGc.fillStyle = 'red';
+							oGc.beginPath();
+							
+							oGc.moveTo(bullet[i].x,bullet[i].y);
+							
+							oGc.arc(bullet[i].x,bullet[i].y,20,0*Math.PI/180,360*Math.PI/180,false);
+							oGc.fill();
+							oGc.restore();  //结束
+						}
+			
+					},1000/60)
+				
+					setInterval(function(){
+						
+						for(var i=0;i<ball.length;i++){
+							ball[i].num++;
+							if(ball[i].num == 270){
+								//当到达第一个半圆终点时变换路径
+								ball[i].r =150;
+								ball[i].startX = 250;
+								ball[i].startY = 50;
+							}
+							
+							else if( ball[i].num == 270 + 180 ){
+								alert('游戏结束');
+								window.location.reload();
+							}
+						
+							
+							
+							ball[i].x =Math.sin(ball[i].num*Math.PI/180)*ball[i].r+ball[i].startX;
+							ball[i].y = ball[i].r - Math.cos(ball[i].num*Math.PI/180)*ball[i].r + ball[i].startY;
+							
+						}
+						
+						for(var i=0;i<bullet.length;i++){
+							bullet[i].x = bullet[i].x + bullet[i].sX;
+							bullet[i].y = bullet[i].y + bullet[i].sY;
+						}
+						 for(var i=0;i<bullet.length;i++){
+							for(var j=0;j<ball.length;j++){
+								if(pz(bullet[i].x,bullet[i].y,ball[j].x,ball[j].y)){
+									bullet.splice(i,1);//删除该元素
+									ball.splice(j,1);//删除该元素
+									score += 1;
+									console.log(score);
+									break;
+								}
+							}
+						}
+						
+					},30)
+				
+				var ball = [];
+				setInterval(function(){
+					ball.push({
+						x:300,
+						y:0,
+						r:200,
+						startX:300,
+						startY:0,
+						num : 0
+						})
+				},350)
+				
+			var iRolate =0;
+			oC.onmousemove = function(ev) {
+				var ev =  ev||Window.event;
+				
+				var x = ev.clientX - oC.offsetLeft;
+				var y = ev.clientY - oC.offsetTop;
+
+				
+				var a= x - 300;
+				var b= y - 200;
+				var c = Math.sqrt( a*a + b*b );
+					
+				if( a>0 && b>0 ){
+					iRolate = Math.asin(b/c) + 90*Math.PI/180 ;
+				}else if( a>0 ){
+					iRolate = Math.asin(a/c);
+				}
+				if( a<0 && b>0 ){
+					iRolate = -Math.asin(b/c) - 90*Math.PI/180 ;
+				}else if( a<0 ){
+					iRolate = Math.asin(a/c);
+				}
+			}
+				
+				
+				
+				
+				var bullet = [];
+				
+				oC.onmousedown = function(ev){
+					clearInterval(oTimer);
+					var ev =  ev||Window.event;
+					
+					var x = ev.clientX - oC.offsetLeft;
+					var y = ev.clientY - oC.offsetTop;
+	
+					
+					var a= x - 300;
+					var b= y - 200;
+					var c = Math.sqrt( a*a + b*b );
+					var speed = 5;
+					
+					var sX = speed * a/c;
+					var sY = speed * b/c;
+					
+					if(flag){
+						oTimer=setInterval(function (){
+							bullet.push({
+								x:300,
+								y:200,
+								sX:sX,
+								sY:sY
+							})
+						},30)
+					}
+					else{
+						
+						bullet.push({
+								x:300,
+								y:200,
+								sX:sX,
+								sY:sY
+							})
+					}
+				}
+				
+				
+				
+				
+				
+			}
+			
+	
+		function pz(x1,y1,x2,y2) {
+			
+			var a = x1-x2;
+			var b = y1-y2;
+			var c = Math.sqrt( a*a + b*b );
+			//计算圆形距正方形面积
+			if(c<40){
+				return true;
+			}else{
+				return false;
+			}
+		}
+	
+		};
+		
+	</script>
+	<body>
+		<canvas id="c1" width="600" height="600"></canvas>
+		<font>无聊模式</font>
+		<input type="button" id="btn1" value="off">
+	</body>
+</html>
