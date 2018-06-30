@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>拖放本地资源</title>
+	<style>
+		#container{
+			width: 500px;
+			height: 500px;
+			background-color: #cccccc;
+		}
+	</style>
+	<script>
+		var imgContainer, msgDiv;
+
+		window.onload = function() {
+			imgContainer = document.getElementById('container');
+			msgDiv = document.getElementById('msgDiv');
+
+			imgContainer.ondragover = function(e) {
+				e.preventDefault();
+			};
+
+			imgContainer.ondrop = function(e) {
+				e.preventDefault();
+
+				var f = e.dataTransfer.files[0];
+				var fileReader = new FileReader();
+				fileReader.onload = function(e) {
+					showObj(e.target);
+					imgContainer.innerHTML = "<img src=\""+fileReader.result+"\">";
+				};
+
+				fileReader.readAsDataURL(f);
+			};
+		};
+
+		function showObj(obj) {
+			var s ='';
+			for(var k in obj) {
+				s += k + ":" + obj[k] + "<br/>";
+			}
+			msgDiv.innerHTML = s;
+		}
+
+	</script>
+</head>
+<body>
+
+	<div id="container"></div>
+	<div id="msgDiv"></div>
+
+</body>
+</html>
