@@ -1,0 +1,13 @@
+安装jre 和 jdk 
+sudo apt-get install default-jre
+sudo apt-get install default-jdk
+
+安装IDEAIC
+第一步，将文件解压到 opt目录：
+sudo tar -zxvf <IDEA的tar.gz压缩包>  -C /opt
+第二步，切换到opt目录，再切换到IDEA的bin目录
+cd /opt
+cd <IDEA具体文件夹的名称>/bin
+第三步ls列出文件目录查看找到idea.sh后运行它
+./idea.sh
+剩下的一般都是一直下一步
