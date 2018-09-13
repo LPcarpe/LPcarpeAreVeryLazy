@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Flash图片切换动画总结</title>
+
+<style>
+*{margin: 0; padding: 0;}
+li{list-style: none;}
+a{text-decoration: none;}
+body{background: #666;}
+.play{
+	width: 400px;
+	height: 430px;
+	background: #999; 
+	margin: 50px auto 0;
+	font: 12px Arial;
+	color: white;
+	overflow: hidden;
+}
+.big_pic{
+	width: 400px;
+	height: 320px;
+	position: relative;
+	top: 0;
+	left: 0;
+}
+.big_pic li{
+	width: 400px;
+	height: 320px;
+	background: url(images/loading.gif) no-repeat center center;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 0;
+}
+.prev{
+	width: 60px;
+	height: 60px;
+	background: url(images/btn.gif) no-repeat 0 0;
+	position: absolute;
+	top: 130px;
+	left: 10px;
+	z-index: 3001;
+	filter: alpha(opacity:0);
+	opacity: 0;
+}
+.next{
+	width: 60px;
+	height: 60px;
+	background: url(images/btn.gif) no-repeat 0 -60px;
+	position: absolute;
+	top: 130px;
+	right: 10px;
+	z-index: 3001;
+	filter: alpha(opacity:0);
+	opacity: 0;
+}
+.mark_left{
+	width: 200px;
+	height: 320px;
+	background: red;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 3000;
+	filter: alpha(opacity:0);
+	opacity: 0;
+}
+.mark_right{
+	width: 200px;
+	height: 320px;
+	background: green;
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 3000;
+	filter: alpha(opacity:0);
+	opacity: 0;
+}
+.bg{
+	width: 400px;
+	height: 25px;
+	background: black;
+	filter: alpha(opacity:60);
+	opacity: 0.6;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 2999;
+}
+.text{
+	position: absolute;
+	bottom: 5px;
+	left: 10px;
+	z-index: 3000;
+}
+.length{
+	position: absolute;
+	bottom: 5px;
+	right: 10px;
+	z-index: 3000;
+}
+.small_pic{
+	width: 390px;
+	height: 94px;
+	position: relative;
+	top: 7px;
+	left: 10px;
+}
+.small_pic li{
+	width: 120px;
+	padding-right: 10px;
+	background: url(images/loading.gif) no-repeat center center;
+	float: left;
+	filter: alpha(opacity:60);
+	opacity: 0.6;
+}
+.small_pic img{
+	width: 120px;
+	height: 94px;
+}
+</style>
+<script src="move.js"></script>
+<script>
+function getByClass(oParent, sClass){
+	var aEle = oParent.getElementsByTagName('*');
+	var aResult = []
+
+	for (var i = 0; i < aEle.length; i++) {
+		if (aEle[i].className == sClass) {//第i个的类名！忘写类名
+			aResult.push(aEle[i]);
+		}
+	}
+
+	return aResult;
+}
+
+window.onload = function(){
+	var oDiv = document.getElementById('playimages');
+
+	var oBtnPrev = getByClass(oDiv, 'prev')[0];
+	var oBtnNext = getByClass(oDiv, 'next')[0];
+	var oMarkLeft = getByClass(oDiv, 'mark_left')[0];
+	var oMarkRight = getByClass(oDiv, 'mark_right')[0];
+
+	var oUlBig = getByClass(oDiv,'big_pic')[0];
+	var aLiBig = oUlBig.getElementsByTagName('li');
+
+	var oUlSmall = getByClass(oDiv, 'small_pic')[0];
+	var aLiSmall = oUlSmall.getElementsByTagName('li');
+
+	var nowZIndex = 2;
+	var now = 0;
+
+	oUlSmall.style.width = aLiSmall[0].offsetWidth*aLiSmall.length+'px';
+
+	oMarkLeft.onmouseover = oBtnPrev.onmouseover = function(){
+		startMove(oBtnPrev, 'opacity', 100);
+	}
+	oMarkLeft.onmouseout = oBtnPrev.onmouseout = function(){
+		startMove(oBtnPrev, 'opacity', 0);
+	}
+	oMarkRight.onmouseover = oBtnNext.onmouseover = function(){
+		startMove(oBtnNext, 'opacity', 100);
+	}
+	oMarkRight.onmouseout = oBtnNext.onmouseout = function(){
+		startMove(oBtnNext, 'opacity', 0);
+	}
+
+	for (var i = 0; i < aLiSmall.length; i++) {
+		aLiSmall[i].index = i;
+
+		aLiSmall[i].onclick = function(){
+
+			if(now == this.index)return;//第一张图的index为0所以大图不动小图也不动。第二张的zindex为1不等于now。
+			now = this.index;
+
+			tab();
+		}
+
+		aLiSmall[i].onmouseover = function(){
+			startMove(this, 'opacity', 100);
+		}
+		aLiSmall[i].onmouseout = function(){
+			if(now != this.index){
+			startMove(this, 'opacity', 60);
+			}
+		}
+	}
+	oBtnPrev.onclick = function(){
+		now--
+		if(now == -1){
+			now = aLiSmall.length-1;//减过头时变为最后一张图
+		}
+
+		tab();
+	}
+	oBtnNext.onclick = function(){
+		now++
+		if(now == aLiSmall.length){
+			now = 0;//加过头时归0
+		}
+
+		tab();
+	}
+
+	function tab(){
+		aLiBig[now].style.zIndex = nowZIndex++;
+
+		for (var i = 0; i < aLiSmall.length; i++) {
+			startMove(aLiSmall[i], 'opacity', 60);
+		}
+		startMove(aLiSmall[now], 'opacity', 100);
+
+		aLiBig[now].style.height = 0;
+		startMove(aLiBig[now], 'height', 320);
+
+		if(now == 0){
+			startMove(oUlSmall, 'left', 10);
+		}
+		else if(now == aLiSmall.length-1){
+			startMove(oUlSmall, 'left', -(now-2)*aLiSmall[0].offsetWidth+10);
+		}
+		else{
+			startMove(oUlSmall, 'left', -(now-1)*aLiSmall[0].offsetWidth+10);
+		}
+
+	}
+
+	timer = setInterval(oBtnNext.onclick,2000);
+
+	oDiv.onmouseover = function(){
+		clearInterval(timer);
+	}
+	oDiv.onmouseout = function(){
+		timer = setInterval(oBtnNext.onclick,2000);
+	}
+}
+</script>
+</head>
+<body>
+	<div id="playimages" class="play">
+		<ul class="big_pic">
+			<div class="prev"></div>
+			<div class="next"></div>
+
+			<a href="javascript:;" class="mark_left"></a>
+			<a href="javascript:;" class="mark_right"></a>
+
+			<div class="text">加载图片文字说明...</div>
+			<div class="length">加载图片数量...</div>
+
+			<div class="bg"></div>
+
+			<li style="z-index: 1;"><img src="images/1.jpg" alt="#"></li>
+			<li><img src="images/2.jpg" alt="#"></li>
+			<li><img src="images/3.jpg" alt="#"></li>
+			<li><img src="images/4.jpg" alt="#"></li>
+			<li><img src="images/5.jpg" alt="#"></li>
+			<li><img src="images/6.jpg" alt="#"></li>
+		</ul>
+
+		<ul class="small_pic">
+			<li style="filter: 100; opacity: 1"><img src="images/1.jpg" alt="#"></li>
+			<li><img src="images/2.jpg" alt="#"></li>
+			<li><img src="images/3.jpg" alt="#"></li>
+			<li><img src="images/4.jpg" alt="#"></li>
+			<li><img src="images/5.jpg" alt="#"></li>
+			<li><img src="images/6.jpg" alt="#"></li>
+		</ul>
+	</div>
+</body>
+</html>
