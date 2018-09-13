@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>作业</title>
+	<style>
+		body, div, ul, li, h1, h2,h3{
+			margin: 0;
+			padding: 0;
+		}
+		li{
+			list-style: none;
+		}
+		.header{
+			width: 1200px;
+			height: 220px;
+			margin: 0 auto;
+			background-color: #900a0d;
+		}
+		.header h1{
+			width: 1200px;
+			height: 80px;
+			line-height: 80px;
+			font-weight: normal;
+			font-size: 24px;
+		}
+		.header .navTop{
+			width: 800px;
+			height: 20px;
+			margin-left: 40px;
+		}
+		.header .navTop li{
+			float: left;
+			margin-right: 10px;
+		}
+		.header .navTop li a{
+			color: white;
+			text-decoration: none;
+		}
+		.header .navTop .special label{
+			display:  none;
+		}
+		.header .navTop .special a{
+			font-size: 14px;
+			color: black;
+		}
+		.container {
+			width: 1200px;
+			margin: 0 auto;
+		}
+		.container h2{
+			height: 50px;
+			background-color: green;
+			line-height: 50px;
+			vertical-align: bottom;
+			font-weight: normal;
+		}
+		.container .article{
+			width: 1200px;
+			height: 320px;
+			background-color: #ffa500;
+		}
+		.container .article h3{
+			height: 70px;
+			line-height: 70px;
+			font-size: 20px;
+			font-weight: normal;
+			background-color: #ffa500;
+		}
+		.container .left{
+			width: 300px;
+			height: 220px;
+			float: left;
+			background-color: #ffcc33;
+		}
+		.container .article .right{
+			width: 900px;
+			height: 220px;
+			float: left;
+			background-color: #09d97c;
+		}
+		.container .article .left ul{
+			width: 100%;
+		}
+		.container .article .left ul li{
+			text-align: center;
+			margin: 15px 0;
+		}
+		.container .article .right ul li{
+			margin: 10px 0 5px 10px;
+		}
+		.container .bottom{
+			width: 1200px;
+			height: 300px;
+			background-color: #f5820f;
+		}
+		.container .bottom span{
+			float: left;
+			width: 100px;
+			height: 50px;
+			line-height: 50px;
+			font-size: 20px;
+			text-align: center;
+			color: white;
+			-webkit-border-radius: 15px;
+			border-radius: 15px;
+			margin: 20px 10px;
+		}
+		.container .bottom span:nth-child(1){
+			background-color: black;
+		}
+		.container .bottom span:nth-child(2){
+			background: -webkit-linear-gradient(bottom, #7d7d7d, #000000);
+			background: linear-gradient(bottom, #7d7d7d, #000000);
+		}
+		.container .bottom span:nth-child(3){
+			background-color: blue;
+			box-shadow: 4px 4px 3px black;
+		}
+		.container .bottom ul{
+			float: left;
+			margin-left: 40px;
+			margin-top: 20px;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="header">
+		<h1>学习html5+css3</h1>
+		<ul class="navTop">
+			<li><a href="#">网站首页</a></li>
+			<li><a href="#">网上商城</a></li>
+			<li><a href="#">修改订单</a></li>
+			<li><a href="#">客服服务</a></li>
+			<li><a href="#">联系我们</a></li>
+			<li class="special">
+				<label for="search">搜索输入框</label>
+				<input type="text" id="search">
+				<a>搜索</a>
+			</li>
+		</ul>
+	</div>
+	<div class="container">
+		<h2>一级标题</h2>
+		<h2>二级标题</h2>
+		<div class="article">
+			<h3>文章的标题</h3>
+			<div class="left">
+				<ul>
+					<li>导航菜单一</li>
+					<li>导航菜单二</li>
+					<li>导航菜单三</li>
+					<li>导航菜单四</li>
+				</ul>
+			</div>
+			<div class="right">
+				<ul>
+					<li>文章的第一段</li>
+					<li>文章的第二段</li>
+					<li>文章的第三段</li>
+					<li>文章的第四段</li>
+				</ul>
+			</div>
+		</div>
+		<div class="bottom">
+				<span>圆角1</span>
+				<span>圆角2</span>
+				<span>圆角3</span>
+				<ul>
+					<li>列表一</li>
+					<li>列表二</li>
+					<li>列表三</li>
+				</ul>
+			</div>
+	</div>
+
+</body>
+</html>
