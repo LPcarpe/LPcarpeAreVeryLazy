@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>transition的综合研究</title>
+<style>
+.transform{
+	width: 1000px;
+	margin: 50px auto;
+}
+.transform:after{
+	clear: both;
+	content: '';
+	display: block;
+	overflow: hidden;
+}
+.transform p{
+	width: 230px;
+	float: left;
+	border: 1px solid #999;
+	margin-right: 10px;
+	text-align: center;
+	padding-bottom: 10px;
+}
+p > strong{
+	display: block;
+	background-color: #eee;
+	line-height: 28px;
+	font-size: 20px;
+	font-family: 'Microsoft Yanhei';
+	color: #333;
+	margin-bottom: 10px;
+}
+p > span{
+	display: block;
+	width: 100px;
+	height: 100px;
+	margin: 0 auto;
+	border: 1px #ccc solid;
+	background-color: #09f;
+}
+.transform .rotate{
+	transform: rotate(20deg);
+}
+.transform .translate{
+	transform: translate(20px, 20px);
+}
+.transform .scale{
+	transform: scale(1.2, 1.2);
+}
+.transform .skew{
+	transform: skew(10deg, 10deg)
+}
+
+.transform.origin > p span{
+	background-color: #0c0;
+	-webkit-transform-origin: 0 80px;
+}
+.transform.origin .scale{
+	transform: scale(.5, .5);
+}
+</style>
+</head>
+<body>
+<div class="transform">
+	<p>
+		<strong>旋转(rotate)</strong>
+		<span class="rotate"></span>
+	</p>
+		<p>
+		<strong>移动(translate)</strong>
+		<span class="translate"></span>
+	</p>
+		<p>
+		<strong>缩放(scale)</strong>
+		<span class="scale"></span>
+	</p>
+		<p>
+		<strong> 扭曲(skew)</strong>
+		<span class="skew"></span>
+	</p>
+</div>
+<div class="transform origin">
+	<p>
+		<strong>旋转(rotate)</strong>
+		<span class="rotate"></span>
+	</p>
+		<p>
+		<strong>移动(translate)</strong>
+		<span class="translate"></span>
+	</p>
+		<p>
+		<strong>缩放(scale)</strong>
+		<span class="scale"></span>
+	</p>
+		<p>
+		<strong> 扭曲(skew)</strong>
+		<span class="skew"></span>
+	</p>
+</div>
+</body>
+</html>

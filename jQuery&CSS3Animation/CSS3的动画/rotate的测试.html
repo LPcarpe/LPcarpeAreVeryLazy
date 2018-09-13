@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>rotateX的测试</title>
+<style>
+body{
+	perspective: 4000px;
+}
+*{
+	margin: 0;
+	padding: 0;
+}
+.box{
+	width: 200px;
+	height: 100px;
+	background: yellow;
+	transition: all 1s;
+	transform-style: preserve-3d;
+	margin: 50px auto;
+}
+.box p{
+	width: 200px;
+	height: 100px;
+	transition: all 1s;
+	line-height: 100px;
+	text-align: center;
+}
+.box p:first-child{
+	background: red;
+	transform: translateZ(50px);
+}
+.box p:last-child{
+	background: blue;
+	margin-top: -50px;
+	transform: translateZ(50px) rotateX(-90deg);
+}
+.box:hover{
+	transform: rotateX(90deg);
+}
+.box:hover p:last-child{
+	margin-top: 0px;
+	transform: translateZ(0) rotateX(-90deg);
+}
+</style>
+</head>
+<body>
+	<div class="box">
+		<p>123</p>
+		<p>124</p>
+	</div>
+</body>
+</html>
