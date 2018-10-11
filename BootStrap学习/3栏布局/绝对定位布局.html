@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>absolute layout</title>
+	<style>
+	    /*简单的进行CSS reset*/
+		body,html{
+		    height:100%;
+		    padding: 0px;
+		    margin:0px;
+		}
+		/*左右绝对定位*/
+		.left,.right{
+		    position: absolute;
+		    top:0px;
+		    background: red;
+		    height:100%;
+		}
+		.left{
+		    left:0;
+		    width:100px;
+		}
+		.right{
+		    right:0px;
+		    width:200px;
+		}
+		/*中间使用margin空出左右元素所占据的空间*/
+		.main{
+		    margin:0px 200px 0px 100px;
+		    height:100%;
+		    background: blue;
+		}
+		/*该方法有个明显的缺点，就是如果中间栏含有最小宽度限制，或是含有宽度的内部元素，当浏览器宽度小到一定程度，会发生层重叠的情况。*/
+	</style>
+</head>
+<body>
+	<div class="left">left</div>
+	<div class="main">main</div>
+	<div class="right">right</div>
+</body>
+</html>
