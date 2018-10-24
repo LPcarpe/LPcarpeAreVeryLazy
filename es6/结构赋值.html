@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>结构赋值</title>
+</head>
+<body>
+<script>
+    // let [a,b,c] = [1,2,3];
+    // console.log(a, b, c)
+
+    // let {d, e, f} = {d: 15, e: 13, f: 5};
+    // console.log(d, e, f);
+
+    let [{a,b}, [n1,n2,n3], num, string] = [{a:12, b:13}, [1,2,3], 4, "helloworld"];
+    let [json, arr, num2, string2] = [{a:12, b:13}, [1,2,3], 4, "helloworld"];
+    console.log(a,b,n1,n2,n3,num,string);
+    console.log(json, arr, num2, string2);
+</script>
+</body>
+</html>

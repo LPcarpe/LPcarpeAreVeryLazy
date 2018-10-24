@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>数组方法</title>
+</head>
+<body>
+<script>
+    /* map */
+    // let arr = [12, 4, 6];
+    // let result = arr.map(item => item*2);
+    // alert(result);
+
+    // let score = [19, 85, 99, 25, 90];
+    // let result2 = score.map(item => item>=60 ? '及格' : '不及格');
+    // alert(result2);
+
+    /* reduce */
+    let arr = [12,3,5,234,3235]
+    // arr.reduce((accumulater,currentValue,index) => {
+    //     console.log(accumulater + ',' + currentValue + ',' + index);
+    // })
+   let result = arr.reduce((accumulater,currentValue,index) => {      
+       if(index == arr.length-1){
+        return (accumulater + currentValue) / arr.length;
+       }else{
+           return accumulater + currentValue;
+       }
+   });
+   console.log(result);
+</script>
+</body>
+</html>
