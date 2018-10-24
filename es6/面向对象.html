@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>面向对象</title>
+</head>
+
+<body>
+    <script>
+        /* function User(name, pwd) {
+            this.name = name;
+            this.pwd = pwd;
+        }
+
+        User.prototype.showName = function () {
+            return this.name;
+        }
+        User.prototype.showPwd = function () {
+            return this.pwd;
+        }
+
+        function VipUser(name, pwd, level) {
+            User.call(this, name, pwd);
+            this.level = level;
+        }
+
+        VipUser.prototype = new User();
+        VipUser.prototype.constructor = VipUser;
+
+        VipUser.prototype.showLevel = function () {
+            return this.level;
+        }
+
+         */
+        
+        class User {
+            constructor(name, pwd) {
+                this.name = name;
+                this.pwd = pwd;
+            }
+            showName() {
+                return this.name;
+            }
+            showPwd() {
+                return this.pwd;
+            }
+        }
+
+        class VipUser extends User{
+            constructor(name, pwd, level){
+                super(name, pwd);
+                this.level = level;
+            }
+
+            showLevel() {
+                return this.level;
+            }
+        }
+        
+        let carpe = new User('lpcarpe', 123456);
+        console.table([
+                        carpe.showName(),
+                        carpe.showPwd()
+                     ]);
+
+        let v1 = new VipUser("miku", 123, 3);
+        console.table([
+                        v1.showLevel(),
+                        v1.showName(),
+                        v1.showPwd()
+                     ]);
+       
+    </script>
+</body>
+
+</html>

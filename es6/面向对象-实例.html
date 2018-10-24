@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>面向对象-实例</title>
+    <script src="js/react.js"></script>
+    <script src="js/react-dom.js"></script>
+    <script src="js/browser.js"></script>
+    <script type="text/babel">
+      class Item extends React.Component{
+        constructor(...args){
+          super(...args);
+        }
+  
+        render(){
+          return <li>{this.props.str}</li>;
+        }
+      };
+
+      class List extends React.Component{
+        constructor(...args){
+          super(...args)
+        }
+
+        render(){
+          // let aItems = [];
+          // for (let i = 0; i < this.props.arr.length; i++) {
+          //     aItems.push(<Item str={this.props.arr[i]}></Item>)
+            
+          // }
+
+          // let aItems = this.props.arr.map(curValue => <Item str={curValue}></Item>);
+          return <ul>
+                     {/*aItems*/this.props.arr.map(curValue => <Item str={curValue}></Item>)}
+                </ul>;
+        }
+      };
+  
+      window.onload=function (){
+        let oDiv=document.getElementById('div1');
+  
+        ReactDOM.render(
+          <List arr={['aaa', 'bbb', 'ccc']}></List>,
+          oDiv
+        );
+      };
+      </script>
+</head>
+
+<body>
+    <div id="div1"></div>
+</body>
+
+</html>
