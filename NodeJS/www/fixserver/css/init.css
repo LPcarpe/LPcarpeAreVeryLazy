@@ -1,0 +1,135 @@
+body,span,label{
+	padding:0;
+	margin:0;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 100%;
+}
+body a{
+    transition:0.5s all;
+	-webkit-transition:0.5s all;
+	-moz-transition:0.5s all;
+	-o-transition:0.5s all;
+	-ms-transition:0.5s all;
+	font-size: 15px;
+	font-family: 'Lato', sans-serif;
+	text-decoration: none;
+}
+body a:hover {
+	text-decoration: none;
+}
+input[type="button"],input[type="submit"]{
+	transition:0.5s all;
+	-webkit-transition:0.5s all;
+	-moz-transition:0.5s all;
+	-o-transition:0.5s all;
+	-ms-transition:0.5s all;
+}
+
+h1,h2,h3,h4,h5,h6{
+font-family: 'Source Sans Pro', sans-serif;
+    transition:0.5s all;
+	-webkit-transition:0.5s all;
+	-moz-transition:0.5s all;
+	-o-transition:0.5s all;
+	-ms-transition:0.5s all;
+	text-transform: capitalize;
+	margin: 0;
+}	
+p{
+	margin:0;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+	color: #777;
+	line-height: 2;
+}
+ul{
+	margin:0;
+	padding:0;
+}
+li{
+	list-style: none;
+}
+label{
+	margin:0;
+}
+
+
+
+
+/*-- 3d旋转菜单start --*/
+.myIcon-bar-ul{
+    position: relative;
+}
+.myIcon-bar-ul:after{
+    display: block;
+    content: '';
+    height: 0;
+    visibility: hidden;
+    clear: both;
+}
+.myIcon-bar-ul li{
+	float: left;
+	width: 30px;
+	height: 30px;
+	margin: 0 6px;
+	text-align: center;
+    line-height: 30px;
+    -webkit-perspective: 4000px;
+    perspective: 4000px;
+}
+.myIcon-bar-ul li a{
+	display: block;
+	width: 30px;
+    height: 30px;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transition: all o.5s;
+    -webkit-transition: all o.5s;
+    -moz-transition: all o.5s;
+    -o-transition: all o.5s;
+    -ms-transition: all o.5s;
+}
+.myIcon-bar-ul li a .back{
+    position: absolute;
+    top: -15px;
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    transform: rotateX(90deg);
+    -webkit-transform: rotateX(90deg);
+    -moz-transform: rotateX(90deg);
+    -o-transform: rotateX(90deg);
+    -ms-transform: rotateX(90deg);
+}
+.myIcon-bar-ul li a .front{
+    color: white;
+    transform: translateZ(15px);
+    -webkit-transform: translateZ(15px);
+    -moz-transform: translateZ(15px);
+    -o-transform: translateZ(15px);
+    -ms-transform: translateZ(15px);
+}
+.myIcon-bar-ul li .facebook .front{
+    background-color: #3b5998;
+}
+.myIcon-bar-ul li .twitter .front{
+    background-color: #00acee;
+}
+.myIcon-bar-ul li .instagram .front{
+    background-color: #f77737;
+}
+.myIcon-bar-ul li .pinterest .front{
+    background-color: #bd081c;
+}
+.myIcon-bar-ul li a:hover{
+    transform: rotateX(-90deg);
+    -webkit-transform: rotateX(-90deg);
+    -moz-transform: rotateX(-90deg);
+    -o-transform: rotateX(-90deg);
+    -ms-transform: rotateX(-90deg);
+}
+/*-- 3d旋转菜单end --*/
+

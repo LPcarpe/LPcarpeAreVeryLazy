@@ -1,0 +1,1245 @@
+/*-- 头部导航条start  --*/
+.navbar {
+    background: #343434;
+    border: #bbb;
+    border-radius: 0px;
+    position: relative;
+    min-height: 50px;
+    margin-bottom: 0px;
+}
+
+.navbar>.container-fluid .navbar-brand {
+    height: 70px;
+    padding: 10px 15px;
+    margin-left: 0px;
+}
+
+.navbar .navbar-brand h1 {
+    color: #f69323;
+    font-weight: 800;
+}
+
+.navbar .navbar-brand h1 span {
+    color: #fff;
+    font-size: 50px;
+}
+
+.navbar .navbar-brand h1 .fa-cog {
+    font-size: 30px;
+    color: #f69323;
+    margin-left: 6px;
+}
+
+/* logo样式完成 */
+
+.navbar .container-fluid .list {
+    margin: 0 24px;
+}
+
+.navbar .container-fluid .list li a {
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.navbar .container-fluid .list li:first-child a {
+    color: #fff;
+}
+
+.navbar .container-fluid .list li:hover a {
+    background-color: transparent;
+    color: #fff;
+}
+
+.navbar .container-fluid .list li a {
+    color: #f69323;
+    padding-bottom: 0;
+}
+
+/*导航菜单栏完成*/
+
+.navbar .myIcon-bar {
+    float: right;
+}
+
+/*3d旋转图标*/
+/*-- 头部导航条end  --*/
+
+/*--  图片轮播start --*/
+.callback_contaienr {
+    width: 100%;
+}
+
+.callback_container ul {
+    position: relative;
+    width: 100%;
+    height: 952px;
+}
+
+.callback_container ul li {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: url(../images/b11.jpg) no-repeat;
+    background-size: 100% 100%;
+}
+
+.callback_container ul li:first-child {
+    z-index: 2;
+    background: url(../images/22.jpg) no-repeat;
+    background-size: 100% 100%;
+}
+
+.callback_container #prev {
+    position: absolute;
+    z-index: 900;
+    width: 38px;
+    height: 61px;
+    top: 50%;
+    left: 0;
+    margin-top: -30px;
+    background: url(../images/themes.png) 0 0 no-repeat;
+}
+
+.callback_container #next {
+    position: absolute;
+    z-index: 900;
+    width: 38px;
+    height: 61px;
+    top: 50%;
+    right: 0;
+    margin-top: -30px;
+    background: url(../images/themes.png) -38px 0 no-repeat;
+}
+
+.callback_container ul li .container-fluid {
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    padding: 20em 5em 0em;
+    text-align: center;
+}
+
+.callback_container ul li .container-fluid .col-md-8 h2 {
+    font-size: 4em;
+    color: #f69323;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    margin: 20px 0 26px;
+}
+
+.callback_container ul li .container-fluid .col-md-8 p {
+    width: 50%;
+    font-size: 16px;
+    color: #fff;
+    margin: 0 auto;
+}
+
+.callback_container ul li .container-fluid .col-md-4 h3 {
+    font-size: 19px;
+    color: #f69323;
+    margin: 10px 0 18px;
+}
+
+.callback_container ul li .container-fluid .col-md-4 p {
+    font-size: 13px;
+    color: #fff;
+    letter-spacing: 1px;
+    line-height: 35px;
+}
+
+/*--  图片轮播end --*/
+
+.about,
+.services,
+.portfolio,
+.team,
+.test,
+.subscribe,
+.footer {
+    padding: 5em 0;
+}
+
+
+
+/*-----about-contet START-----*/
+.about .container {
+    padding: 0 15px;
+}
+
+.about .container h2 {
+    margin: 20px 0 30px;
+    font-size: 40px;
+    font-weight: 800;
+    color: #00bce4;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.about .container {
+    padding: 0;
+}
+
+.about .container .pic-content {
+    padding: 0;
+}
+
+.about .container .pic-content img {
+    width: 100%;
+}
+
+.about .container .text-content-1 {
+    padding: 0 100px 110px 40px;
+    background-color: #fb213a;
+}
+
+.about .container .text-content-2 {
+    padding: 0 100px 110px 40px;
+    background-color: #03a9f4;
+}
+
+.about .container .col-md-6 h3 {
+    margin-top: 50px;
+    margin-bottom: 9px;
+    color: #fff;
+    font-size: 23px;
+}
+
+.about .container .col-md-6 p {
+    color: #fff;
+    font-size: 15px;
+    font-weight: 100;
+    letter-spacing: 1px;
+    line-height: 26px;
+}
+
+.about .container .col-md-6 a {
+    text-transform: uppercase;
+    display: inline-block;
+    color: #fff;
+    font-size: 15px;
+    padding: 8px 0px;
+    margin: 2.5em 0 0;
+}
+
+/*非modal部分完成*/
+#myModal1 .modal-dialog .modal-content .modal-header {
+    height: auto;
+}
+
+#myModal1 .modal-dialog .modal-content .modal-header h3 {
+    font-size: 30px;
+    font-weight: 500;
+    text-align: center;
+}
+
+#myModal1 .modal-dialog .modal-content .modal-body img {
+    width: 100%;
+}
+
+#myModal1 .modal-dialog .modal-content .modal-body p {
+    margin-top: 20px;
+}
+
+/*------about-contet END------*/
+
+
+/*----- services START -------*/
+.services .container h2 {
+    margin: 20px 0 35px;
+    font-size: 40px;
+    font-weight: 800;
+    color: #00bce4;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.services .container .col-md-4 .content {
+    padding-bottom: 10px;
+    background-color: #e5e5e5;
+}
+
+.services .container .col-md-4 .content-bottom {
+    margin: 48px 0;
+}
+
+.services .container .col-md-4 .content i {
+    display: block;
+    width: 80px;
+    height: 80px;
+    font-size: 30px;
+    text-align: center;
+    line-height: 80px;
+    margin: 0 auto;
+    color: #fff;
+}
+
+.services .container .col-md-4 .content h3 {
+    margin: 11px;
+    font-size: 22px;
+    color: #f69323;
+    text-align: center;
+}
+
+.services .container .col-md-4 .content .services-grid-left {
+    float: left;
+    margin: 12px 0 12px 96px;
+    text-align: center;
+}
+
+.services .container .col-md-4 .content .services-grid-left h4 {
+    font-weight: 500;
+    margin: 10px 0;
+}
+
+.services .container .col-md-4 .content .services-grid-right {
+    float: right;
+    margin: 12px 96px 12px 0px;
+    text-align: center;
+}
+
+.services .container .col-md-4 .content .services-grid-right h4 {
+    font-weight: 500;
+    margin: 10px 0;
+}
+
+.services .container .col-md-4 .content-mobile {
+    border-top: 2px solid #23c3fe;
+}
+
+.services .container .col-md-4 .content-mobile i {
+    background-color: #23c3fe;
+}
+
+.services .container .col-md-4 .content-laptop {
+    border-top: 2px solid #fb213a;
+}
+
+.services .container .col-md-4 .content-laptop i {
+    background-color: #fb213a;
+}
+
+.services .container .col-md-4 .content-clipboard {
+    border-top: 2px solid #7ecc13;
+}
+
+.services .container .col-md-4 .content-clipboard i {
+    background-color: #7ecc13;
+}
+
+.services .container .col-md-4 .content-empire {
+    border-top: 2px solid #f48e96;
+}
+
+.services .container .col-md-4 .content-empire i {
+    background-color: #f48e96;
+}
+
+.services .container .col-md-4 .content-plug {
+    border-top: 2px solid #232323;
+}
+
+.services .container .col-md-4 .content-plug i {
+    background-color: #232323;
+}
+
+.services .container .col-md-4 .content-forward {
+    border-top: 2px solid #00b06c;
+}
+
+.services .container .col-md-4 .content-forward i {
+    background-color: #00b06c;
+}
+
+/*------- services END -------*/
+/*-------  team START --------*/
+.team {
+    background-color: #f69323;
+}
+
+.team .container h2 {
+    margin: 20px 0 35px;
+    font-size: 40px;
+    font-weight: 800;
+    color: #fff;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.team .container .col-md-3 .content {
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #fff;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.team .container .col-md-3 .content img {
+    width: 100%;
+}
+
+.team .container .col-md-3 .content h3 {
+    font-size: 27px;
+    font-weight: 500;
+    color: #f69323;
+    margin: 15px 0 10px;
+
+}
+
+.team .container .col-md-3 .content p {
+    color: #00bce4;
+    margin: 12px 0;
+
+}
+
+.team .container .col-md-3 .content .iconBar-small {
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+}
+
+.team .container .col-md-3 .content .iconBar-small:hover li a {
+    color: #f69323;
+}
+
+.team .container .col-md-3 .content .iconBar-small li {
+    float: left;
+    margin: 10px 10px;
+}
+
+/*---------  team END --------*/
+/*------- portfolio START------*/
+.portfolio .container-fluid {
+    padding: 0;
+}
+
+.portfolio .container-fluid .col-md-6 {
+    padding: 0;
+    cursor: pointer;
+}
+
+.portfolio .container-fluid .col-md-6 .col-sm-6 {
+    padding: 0;
+}
+
+.portfolio .container-fluid h2 {
+    margin: 20px 0 35px;
+    font-size: 40px;
+    font-weight: 800;
+    color: #00bce4;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.portfolio .container-fluid .col-md-6 .col-sm-6 {
+    overflow: hidden;
+}
+
+.portfolio .container-fluid .col-md-6 .col-sm-6 a {
+    display: block;
+    height: 100%;
+    min-height: 238px;
+}
+
+.portfolio .container-fluid .col-md-6 .text-content {
+    padding: 44px 36px;
+}
+
+.portfolio .container-fluid .col-md-6 .text-content h4 {
+    font-size: 23px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #5f9ea0;
+    margin: 10px 0;
+}
+
+.portfolio .container-fluid .pc .col-sm-6 a {
+    background: url(../images/g1.jpg) no-repeat center 0px;
+    background-size: cover;
+}
+
+.portfolio .container-fluid .software .col-sm-6 a {
+    background: url(../images/g2.jpg) no-repeat center 0px;
+    background-size: cover;
+}
+
+.portfolio .container-fluid .mobile .col-sm-6 a {
+    background: url(../images/g3.jpg) no-repeat center 0px;
+    background-size: cover;
+}
+
+.portfolio .container-fluid .board .col-sm-6 a {
+    background: url(../images/g4.jpg) no-repeat center 0px;
+    background-size: cover;
+}
+
+.portfolio .container-fluid .col-md-6 .hover-content:after {
+    display: block;
+    height: 0;
+    content: '';
+    visibility: hidden;
+    clear: both;
+}
+
+.portfolio .container-fluid .col-md-6 .hover-content:hover {
+    background-color: #f69323;
+}
+
+.portfolio .container-fluid .col-md-6 .hover-content:hover .text-content h4 {
+    color: #000;
+}
+
+.portfolio .container-fluid .col-md-6 .hover-content:hover .text-content p {
+    color: #fff;
+}
+
+.portfolio .container-fluid .col-md-6 .hover-content:hover .img-content a {
+    transform: scale(1.4) rotateZ(15deg);
+    -webkit-transform: scale(1.4) rotateZ(15deg);
+    -moz-transform: scale(1.4) rotateZ(15deg);
+    -o-transform: scale(1.4) rotateZ(15deg);
+    -ms-transform: scale(1.4) rotateZ(15deg);
+}
+
+/*------- portfolio END -------*/
+/*--------- test START --------*/
+
+.test h2 {
+    margin: 20px 0 35px;
+    font-size: 40px;
+    font-weight: 800;
+    color: #00bce4;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.test .carousel .carousel-indicators {
+    bottom: -40px;
+}
+
+.test .carousel .carousel-indicators li {
+    width: 25px;
+    height: 5px;
+    margin: 0 5px;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+
+.test .carousel .carousel-indicators li.active {
+    background-color: #000;
+}
+
+.test .carousel .carousel-inner .item .container-fluid .col-md-4 span {
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-color: pink;
+    margin: 10px auto 0;
+    font-size: 30px;
+    font-weight: 900;
+    text-align: center;
+    line-height: 40px;
+}
+
+.test .carousel .carousel-inner .item .container-fluid .col-md-4 p {
+    padding: 20px;
+    border: 1px solid black;
+    text-align: center;
+    color: black;
+}
+
+.test .carousel .carousel-inner .item .container-fluid .col-md-4 h6 {
+    text-align: center;
+    margin: 10px auto;
+    color: #00BCD4;
+}
+
+.test .carousel .carousel-inner .item .container-fluid .col-md-4 h5 {
+    text-align: center;
+    margin: 10px auto;
+}
+
+/*--------- test END --------*/
+/*------- contact START -----*/
+.contact .subscribe .icon i {
+    border-left: 10px solid #f69323;
+    padding-left: 30px;
+}
+
+.contact .subscribe .icon i {
+    float: left;
+    display: blcok;
+    width: 50px;
+    height: 60px;
+    font-size: 40px;
+    line-height: 60px;
+    color: #00BCD4;
+    background-color: #fff;
+}
+
+.contact .subscribe .icon h3 {
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 60px;
+    text-align: center;
+}
+
+.contact .subscribe .email-content #email::-webkit-input-placeholder {
+    color: #fff;
+}
+
+.contact .subscribe .email-content #email {
+    float: left;
+    width: 80%;
+    text-align: center;
+    height: 60px;
+    border: none;
+    color: #fff;
+    padding: 0 30px;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    background-color: rgb(11, 24, 35);
+}
+
+.contact .subscribe .email-content .btn {
+    float: left;
+    width: 20%;
+    height: 60px;
+    background-color: #f69323;
+    border: none;
+    border-radius: 0;
+    font-size: 30px;
+    line-height: 60px;
+    color: #fff;
+    padding: 0 16px;
+}
+
+.contact .contactus {
+    padding: 0;
+}
+
+.contact .contactus .col-md-6 {
+    padding: 0;
+    background: url(../images/c12.jpg) no-repeat;
+    background-size: cover;
+}
+
+.contact .contactus form {
+    padding: 58px 70px 50px;
+}
+
+.contact .contactus form h3 {
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.contact .contactus .col-md-6 input {
+    outline: none;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid #fff;
+    padding: 20px 10px;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+    background: none;
+    margin-bottom: 15px;
+}
+
+.contact .contactus .col-md-6 input::-webkit-input-placeholder {
+    color: #fff;
+    font-weight: 500;
+}
+
+.contact .contactus .col-md-6 input:focus {
+    box-shadow: none;
+}
+
+.contact .contactus .col-md-6 textarea::-webkit-input-placeholder {
+    color: #fff;
+    font-weight: 500;
+}
+
+.contact .contactus .col-md-6 textarea {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #fff;
+    padding: 10px;
+    width: 100%;
+    font-size: 14px;
+    color: #fff;
+    background: none;
+    margin-bottom: 15px;
+}
+
+.contact .contactus .col-md-6 .btn {
+    outline: none;
+    width: auto;
+    border: 2px solid #f69323;
+    background: #f69323;
+    color: #fff;
+    font-size: 1.1em;
+    padding: 8px 25px;
+    border-radius: 0;
+    margin-top: 37px;
+}
+
+/*------  contact END  ------*/
+/*------  footer START ------*/
+.footer {
+    background-color: #000;
+    color: #fff;
+}
+
+.footer .container .col-md-4 a {
+    color: #fff;
+}
+
+.footer .container .e-services .title {
+    font-size: 27px;
+    color: #fff;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+.footer .container .e-services p {
+    font-size: 14px;
+    color: #fff;
+    margin-top: 22px;
+}
+
+.footer .container .e-services .myIconBar2 {
+    margin-top: 12px;
+}
+
+.footer .container .e-services .myIconBar2 .myIcon-bar-ul li {
+    margin: 0 8px;
+}
+
+.footer .container .e-services .myIconBar2 .myIcon-bar-ul li a {
+    color: #337ab7;
+}
+
+.footer .container .e-services .myIconBar2 .myIcon-bar-ul li:first-child {
+    margin-left: 0;
+}
+
+.footer .container .information h3 {
+    color: #fff;
+    font-size: 14px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.footer .container .information .list li {
+    float: none;
+}
+
+.footer .container .information .list li a {
+    color: #fff;
+    line-height: 30px;
+    list-style-type: none;
+    padding: 0;
+    font-size: 15px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+}
+
+.footer .container .information .list li a:hover {
+    background: none;
+    color: #f69323;
+}
+
+.footer .container .address h3 {
+    color: #fff;
+    font-size: 1.4em;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.footer .container .address p {
+    display: block;
+    width: 80%;
+    font-size: 12px;
+    font-weight: 400;
+    color: #fff;
+    line-height: 35px;
+    margin-left: 50px;
+}
+
+.footer .container .address p i {
+    float: left;
+    margin-left: -40px;
+    margin-top: 14px;
+}
+
+.footer .container .address p a {
+    color: #f69323;
+}
+
+/*------  footer END  -------*/
+
+#toTop{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 32px;
+    height: 32px;
+    background: url(../images/top2.png);
+    content: '';
+}
+
+
+@media screen and (min-width: 1025px) {
+    .navbar .container-fluid .list {
+        padding: 16px 216px 0 216px;
+    }
+
+    .navbar .myIcon-bar {
+        margin-top: 28px;
+    }
+
+    /*导航条结束*/
+}
+
+/* --------------------------------------------------------------------------------  ipad Pro  ---------------------------------------------------------------------------------*/
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+    .navbar {
+        padding-bottom: 5px;
+    }
+
+    .navbar .container-fluid .list {
+        float: right;
+        padding: 26px 12px 0 12px;
+    }
+
+    .navbar .container-fluid .list li {
+        font-weight: 700;
+    }
+
+    .navbar .myIcon-bar {
+        margin: 28px 0 12px 0;
+    }
+
+    .navbar .myIcon-bar .myIcon-bar-ul li {
+        margin: 0 7px;
+    }
+
+    /*导航条结束*/
+
+
+    .callback_container ul {
+        height: 512px;
+    }
+
+    .callback_container ul li .container-fluid {
+        padding: 96px 80px 0;
+    }
+
+    .callback_container ul li .container-fluid .col-md-8 p {
+        width: 80%;
+    }
+
+    .callback_container ul li .container-fluid .col-md-4 h3 {
+        margin-bottom: 10px;
+        margin-top: 15px;
+    }
+
+    /*图片轮播结束*/
+
+
+    .about .container .text-content-1 {
+        padding-bottom: 25px;
+    }
+
+    .about .container .text-content-2 {
+        padding-bottom: 25px;
+    }
+
+    /* about部分结束 */
+
+    .portfolio .container-fluid .col-md-6 .text-content {
+        padding: 44px 18px;
+    }
+
+    /*portfolio*/
+}
+
+
+
+
+
+/* ----------------------------------------------------------------------------------  ipad   -----------------------------------------------------------------------------------*/
+@media screen and (max-width: 768px) and (min-width: 415px) {
+    .navbar {
+        padding-bottom: 15px;
+    }
+
+    .navbar>.container-fluid {
+        padding: 10px;
+    }
+
+    .navbar>.container-fluid .navbar-brand {
+        padding: 5px 0;
+    }
+
+    .navbar>.container-fluid .navbar-brand h1 {
+        font-size: 31px;
+    }
+
+    .navbar>.container-fluid .list {
+        float: right;
+        padding-top: 36px;
+        margin: 0;
+    }
+
+    .navbar>.container-fluid .list li a {
+        padding: 0 4px 10px;
+        font-size: 15px;
+        font-weight: 700;
+    }
+
+    .navbar .myIcon-bar {
+        margin-top: 28px;
+    }
+
+    .navbar .myIcon-bar .myIcon-bar-ul li {
+        margin: 0 7px;
+    }
+
+    /*导航条结束*/
+
+
+    .callback_container ul {
+        height: 384px;
+    }
+
+    .callback_container ul li .container-fluid {
+        padding: 96px 80px 0;
+    }
+
+    .callback_container ul li .container-fluid .col-md-8 h2 {
+        font-size: 36px;
+    }
+
+    .callback_container ul li .container-fluid .col-md-8 p {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .callback_container ul li .container-fluid .col-md-4 p {
+        line-height: 32px;
+    }
+
+    /*图片轮播结束*/
+
+
+    .about .container {
+        padding: 0 15px;
+    }
+
+    .about .container .text-content-1 {
+        padding: 48px;
+    }
+
+    .about .container .text-content-2 {
+        padding: 48px;
+    }
+
+    .about .container .col-md-6 h3 {
+        margin: 0;
+    }
+
+    .about .container .pic-content {
+        margin: 24px auto;
+        width: 70%;
+    }
+
+    /* about部分结束 */
+
+
+    .services .container .col-md-4 {
+        width: 50%;
+        float: left;
+        margin: 0 0 24px 0;
+    }
+
+    .services .container .col-md-4 .content-bottom {
+        margin: 0;
+    }
+
+    /*services部分结束*/
+
+    .team .container .col-md-3 {
+        float: left;
+        width: 50%;
+        padding: 20px 15px;
+    }
+
+    /*team完成*/
+
+    .portfolio .container-fluid .col-md-6 .text-content {
+        padding: 48px;
+    }
+
+    /*portfolio完成*/
+    .contact {
+        padding-top: 60px;
+    }
+
+    .contact .subscribe {
+        width: 70%;
+    }
+
+    .contact .subscribe .icon {
+        width: 70%;
+        margin: 0px auto 20px;
+    }
+
+    .contact .subscribe .icon i {
+        width: 100%;
+        padding-left: 30px;
+        padding-top: 10px;
+        border-left: 5px solid #f69323;
+        height: 50px;
+        line-height: 50px;
+    }
+
+    .contact .subscribe .icon h3 {
+        float: left;
+        line-height: 50px;
+        border-left: 5px solid #f69323;
+        padding-left: 30px;
+
+    }
+
+    .contact .contactus {
+        padding: 50px 90px 58px;
+    }
+
+    /*contact部分结束*/
+    .footer .container .information:after {
+        display: block;
+        content: '';
+        height: 0;
+        visibility: hidden;
+        clear: both;
+    }
+
+    .footer .container .col-md-4 {
+        width: 50%;
+        margin: 0 auto;
+        margin-bottom: 60px;
+    }
+
+    /*footer部分完成*/
+}
+
+/* ----------------------------------------------------------------------------------  iphone  -----------------------------------------------------------------------------------*/
+@media screen and (max-width: 414px) {
+    .navbar {
+        padding: 5px 5px 15px 5px;
+    }
+
+    .navbar>.container-fluid .navbar-brand {
+        margin-left: 10px;
+    }
+
+    .navbar>.container-fluid .navbar-brand h1 {
+        font-size: 31px;
+    }
+
+    .navbar>.container-fluid .navbar-toggle {
+        margin-top: 15px;
+        margin-right: 20px;
+    }
+
+    .navbar>.container-fluid .list li {
+        padding: 10px 4px;
+    }
+
+    .navbar>.container-fluid .list li a {
+        text-align: center;
+    }
+
+    .navbar .myIcon-bar {
+        float: none;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .navbar .myIcon-bar .myIcon-bar-ul li {
+        margin: 0 8px;
+    }
+
+    .navbar .myIcon-bar .myIcon-bar-ul {
+        display: inline-block;
+    }
+
+    div#bs-example-navbar-collapse-1 {
+        position: absolute;
+        z-index: 999;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    /*导航栏结束*/
+
+
+    .callback_container ul {
+        height: 500px;
+    }
+
+    .callback_container ul li .container-fluid {
+        padding: 32px 32px 0 32px;
+    }
+
+    .callback_container ul li .container-fluid .col-md-8 h2 {
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+
+    .callback_container ul li .container-fluid .col-md-8 p {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .callback_container ul li .container-fluid .col-md-4 h3 {
+        font-size: 16px;
+        margin-top: 15px;
+        margin-bottom: 10px;
+    }
+
+    .callback_container ul li .container-fluid .col-md-4 p {
+        line-height: 34px;
+    }
+
+    /*图片轮播结束*/
+
+
+    .about .container {
+        padding: 0 15px;
+    }
+
+    .about .container .text-content-1 {
+        padding: 48px;
+    }
+
+    .about .container .text-content-2 {
+        padding: 48px;
+    }
+
+    .about .container .col-md-6 h3 {
+        margin: 0;
+    }
+
+    .about .container .pic-content {
+        margin: 24px auto;
+        width: 70%;
+    }
+
+    /*about部分结束*/
+
+    .services .container .col-md-4 .content {
+        margin: 0;
+        margin-bottom: 48px;
+    }
+
+    /*services部分结束*/
+
+    .team .container .col-md-3 {
+        padding: 20px 15px;
+    }
+
+    /*team部分完成*/
+
+    .portfolio .container-fluid .col-md-6 .mobile,
+    .portfolio .container-fluid .col-md-6 .board {
+        position: relative;
+        height: 445px;
+    }
+
+    .portfolio .container-fluid .col-md-6 .mobile .text-content,
+    .portfolio .container-fluid .col-md-6 .board .text-content {
+        position: absolute;
+        bottom: 0;
+    }
+
+    /*portfolio部分完成*/
+    .contact .subscribe {
+        width: 90%;
+        text-align: center;
+    }
+
+    .contact .subscribe .icon {
+        width: 100%;
+        margin: 0px auto 20px;
+    }
+
+    .contact .subscribe .icon i {
+        width: 100%;
+        padding-left: 30px;
+        border-left: 5px solid #f69323;
+        height: 40px;
+        font-size: 30px;
+        line-height: 40px;
+        text-align: left;
+    }
+
+    .contact .subscribe .icon h3 {
+        float: left;
+        line-height: 40px;
+        font-size: 18px;
+        border-left: 5px solid #f69323;
+        padding-left: 30px;
+
+    }
+
+    .contact .subscribe .email-content #email {
+        width: 100%;
+    }
+
+    .contact .subscribe .email-content #email::-webkit-input-placeholder {
+        font-size: 16px;
+    }
+
+    .contact .subscribe .email-content .btn {
+        float: none;
+        font-size: 20px;
+        width: 30%;
+        margin: 20px auto;
+    }
+
+    .contact .contactus {
+        padding: 50px 15px 58px;
+    }
+
+    /*contact部分结束*/
+    .footer {
+        padding: 60px 10px;
+    }
+
+    .footer .container .col-md-4 {
+        margin-bottom: 40px;
+    }
+
+    .footer .container .col-md-4 h3 {
+        font-size: 26px;
+    }
+
+    .footer .container .information ul {
+        margin: 0 auto;
+    }
+
+    /*footer完成*/
+}
