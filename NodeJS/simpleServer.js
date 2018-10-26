@@ -1,8 +1,11 @@
-var http = require('http');
-var fs = require('fs');
+const http = require('http');
+const fs = require('fs');
 
-var server = http.createServer(function(req, res) {
-    var file_name = "./www" + req.url;
+let server = http.createServer(function(req, res) {
+    //request
+    //response
+    let file_name = "./www" + req.url;
+    console.log(file_name);
 
     fs.readFile(file_name, function(err, data) {
         if(err){
