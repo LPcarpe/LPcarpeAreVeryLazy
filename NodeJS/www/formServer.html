@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>formServer</title>
+</head>
+
+<body>
+    <form action="http://192.168.12.92:8080/www">
+        账号：<input type="text" name="user" id="user">
+        密码： <input type="text" name="pass" id="pass">
+        <input type="button" value="注册" id="reg">
+        <input type="button" value="登录" id="login">
+    </form>
+<script src="ajax.js"></script>
+<script>
+window.onload = function (){
+    var user = document.getElementById('user');
+    var pass = document.getElementById('pass');
+    var reg = document.getElementById('reg');
+    var login = document.getElementById('login');
+
+    reg.onclick = function (){
+        ajax({
+            url: '/user',
+            data: {"act": reg, "user": user.value, "pass": pass.value},
+            type: 'get',
+            success: function (str){
+                var json = eval('('+str+')');
+
+                if(json.ok){
+                    alert("注册成功");
+                }else{
+                    alert("注册失败" + json.msg);
+                }
+            },
+            error: function (){
+                alert("通信错误");
+            }
+        });
+    };
+
+    login.onclick = function (){
+        ajax({
+            url: '/user',
+            data: {"act": login, "user": user.value, "pass": pass.value},
+            type: 'get',
+            success: function (){
+                var json = eval('('+str+')');
+                if(json.ok){
+                    alert("登录成功");
+                }else{
+                    alert("登录失败" + json.msg);
+                }
+            },
+            error: function (){
+                alert("通信错误");
+            }
+        });
+    }
+
+
+};
+</script>
+</body>
+
+</html>

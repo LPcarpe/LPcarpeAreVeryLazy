@@ -6,18 +6,6 @@ const urlLib = require('url');
 let server = http.createServer(function(req, res) {
     //request
     //response
-    let file_name = "./www" + req.url;
-
-    fs.readFile(file_name, function(err, data) {
-        if(err){
-            res.write('404');
-        }else{
-            res.write(data);
-        }
-        res.end(); 
-        console.log('finish');
-    });
-
     let GET = {};
     //normal
     /* if(req.url.indexOf('?') != -1){
@@ -47,6 +35,26 @@ let server = http.createServer(function(req, res) {
     var url = obj.pathname;
     GET = obj.query;
     console.log(url, GET);
+
+    var str = '';
+    req.on('data', function (data){
+        str += data;
+    });
+    req.on('end', function (){
+        const POST = queryString.parse(str);
+
+        let file_name = "./www" + url;
+
+        fs.readFile(file_name, function(err, data) {
+            if(err){
+                res.write('404');
+            }else{
+                res.write(data);
+            }
+            res.end(); 
+            console.log('finish');
+        });
+    });
 });
 
 server.listen(8080);
