@@ -5,7 +5,7 @@ const urlLib = require('url');
 
 var user = {};
 
-http.createServer(function (req, res){
+var server = http.createServer(function (req, res){
     var str = '';
 
     req.on('data', function (data){
@@ -14,9 +14,9 @@ http.createServer(function (req, res){
     req.on('end', function (){
         var obj = urlLib.parse(req.url, true);
 
-        const url = ob.pathname;
+        const url = obj.pathname;
         const GET = obj.query;
-        const POST = queryString(str);
+        const POST = queryString.parse(str);
         
         //判断接口
         if(url == '/user'){
@@ -57,4 +57,6 @@ http.createServer(function (req, res){
     });
     
 
-}).listen(8080);
+});
+
+server.listen(8080);

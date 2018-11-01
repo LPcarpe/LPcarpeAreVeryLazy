@@ -26,7 +26,7 @@ window.onload = function (){
     reg.onclick = function (){
         ajax({
             url: '/user',
-            data: {"act": reg, "user": user.value, "pass": pass.value},
+            data: {"act": 'reg', "user": user.value, "pass": pass.value},
             type: 'get',
             success: function (str){
                 var json = eval('('+str+')');
@@ -46,7 +46,7 @@ window.onload = function (){
     login.onclick = function (){
         ajax({
             url: '/user',
-            data: {"act": login, "user": user.value, "pass": pass.value},
+            data: {"act": 'login', "user": user.value, "pass": pass.value},
             type: 'get',
             success: function (){
                 var json = eval('('+str+')');
