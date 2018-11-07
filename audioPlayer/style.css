@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.music-box {
+    position: relative;
+    width: 414px;
+    margin: 0 auto;
+    max-height: 738px;
+    background-color: #333333;
+}
+
+.music-box .songTitle {
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    color: white;
+}
+
+.music-box .songPic {
+    display: block;
+    width: 240px;
+    height: 240px;
+    margin: 0 auto;
+    border-radius: 50%;
+    background-color: pink;
+}
+
+.music-box .timeLineBox {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+.music-box .timeLineBox .timeLine {
+    width: 60%;
+    background-color: #666666;
+    height: 4px;
+    border-radius: 2px;
+    margin: 8px 10px 0;
+}
+
+.music-box .timeLineBox .timeLine .colorHolder {
+    width: 10%;
+    height: 4px;
+    background-color: blue;
+    float: left;
+    border-radius: 2px;
+}
+
+.music-box .timeLineBox .timeLine .colorHolder .anchor {
+    float: right;
+    margin-top: -4px;
+    display: block;
+    width: 12px;
+    height: 12px;
+    background-color: #ff6666;
+    border-radius: 50%;
+    border: 4px solid white;
+    box-sizing: border-box;
+}
+
+.music-box .btnBox {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.music-box .btnBox button {
+    width: 28px;
+    height: 28px;
+    border: 2px solid white;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+}
+
+.music-box .btnBox button.playToggle {
+    width: 32px;
+    height: 32px;
+    margin: 0 5px;
+}
+
+.music-box .playList-label {
+    font-size: 14px;
+    font-weight: normal;
+    border-bottom: 1px solid black;
+    color: white;
+    padding-left: 5px;
+    padding-bottom: 5px;
+    margin-top: 20px;
+}
+
+.music-box .playList {
+    width: 100%;
+    color: white;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.music-box .playList .playList-header {
+    display: flex;
+    width: 100%;
+}
+
+.music-box .playList .playList-list {
+    width: 100%;
+    cursor: pointer;
+    max-height: 276px;
+    overflow: scroll;
+}
+.music-box .playList .playList-list::-webkit-scrollbar{
+    display: none;
+}
+
+.music-box .playList .playList-list .playList-item {
+    display: flex;
+    width: 100%;
+}
+
+.music-box .playList .playList-list .playList-item:hover {
+    background-color: #666666;
+}
+
+.music-box .playList p {
+    height: 24px;
+    font-size: 13px;
+    line-height: 24px;
+}
+
+.music-box .playList p.song-name {
+    width: 60%;
+    -webkit-line-clamp: 1;
+    /* 设置超出多少行隐藏 */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    /*虽然显示了3个点但是有bug所以要使用overflow*/
+    /* 设置 display 为 -webkit-box 或者 -webkit-inline-box 时为隐藏状态 */
+    display: -webkit-inline-box;
+}
+
+.music-box .playList p.song-author {
+    width: 30%;
+}
+
+.music-box .playList .song-time {
+    width: 10%;
+}
