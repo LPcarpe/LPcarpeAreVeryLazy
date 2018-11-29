@@ -106,12 +106,20 @@
     display: flex;
     width: 100%;
 }
-
+.music-box .playList-outter {
+    overflow: hidden;
+    width: 100%;
+}
+.music-box .playList .playList-inner{
+    margin-right: -20px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    max-height: 276px;
+}
 .music-box .playList .playList-list {
     width: 100%;
     cursor: pointer;
-    max-height: 276px;
-    overflow: scroll;
+
 }
 .music-box .playList .playList-list::-webkit-scrollbar{
     display: none;
@@ -120,10 +128,6 @@
 .music-box .playList .playList-list .playList-item {
     display: flex;
     width: 100%;
-}
-
-.music-box .playList .playList-list .playList-item:hover {
-    background-color: #666666;
 }
 
 .music-box .playList p {

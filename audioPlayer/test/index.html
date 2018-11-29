@@ -21,6 +21,7 @@
             var oTxt = document.getElementById('songTxt');
             var cSong = document.getElementById('cSong');
             var flag = true;
+            var path = null;
 
             play.onclick = function() {
                 if(mplayer.paused){
@@ -33,12 +34,14 @@
             cSong.onclick = function() {
                if(flag){
                     mplayer.src = "妄想税.mp3";
+                    path = mplayer.src;
                     flag = false;
                }else{
                    mplayer.src = "kissOfDeath.ogg";
+                   path = mplayer.src;
                    flag = true;
                }
-                oTxt.innerHTML = encodeURI(encodeURI(mplayer.src));
+                oTxt.innerHTML = decodeURI(path);
             }
         }
     </script>
