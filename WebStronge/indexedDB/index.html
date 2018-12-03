@@ -7,10 +7,13 @@
     <title>Document</title>
 </head>
 <body>
-    <script src="indexedDB.js"></script>
+    <script src="idxDB.js"></script>
     <!-- <script src="indexed.js"></script> -->
     <script>
-        var test = new IDB();
+        var test = new IdxDB('test');
+        test.createTable('test01');
+        test.createTable('test02');
+        test.createTable('test03');
     </script>
 </body>
 </html>

@@ -5,9 +5,10 @@ function initDB() {
 
     request.onupgradeneeded = function(event) {
         db = event.target.result;
+        //拿到数据库实例。
         console.log('正在更新...')
         console.log("数据库对象" + db);
-        //拿到数据库实例。
+        
         var objectStore;
         if(!db.objectStoreNames.contains('person')){
             objectStore = db.createObjectStore('person',{keyPath: 'id', autoIncrement: true});
@@ -21,7 +22,7 @@ function initDB() {
         console.log('打开数据库成功')
         console.log("数据库对象的实例"+db);
 
-/*         add(1,'lpcarpe', 24, 'lpcarpe@example.com');
+/*      add(1,'lpcarpe', 24, 'lpcarpe@example.com');
         add(2, 'shark', 22, 'happyshark@example.com');
         readAll();
         update(1, '张三', 23, 'zhangsan@example.com');
