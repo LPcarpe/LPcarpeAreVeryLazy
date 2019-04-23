@@ -1,0 +1,6 @@
+function test_input($data){
+	$data = trim($data);		 //去空格
+	$data = stripslashes($data);	 //删除字符创中的反斜杠
+	$data = htmlspecialchars($data); //去除ｈｔｍｌ特殊标记
+	return $data;
+}
