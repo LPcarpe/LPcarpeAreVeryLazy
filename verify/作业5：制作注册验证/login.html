@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+<title>制作注册验证</title>
+	<link href="css/reg.css" rel="stylesheet">
+	<script src="js/jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+	var flag1,flag2
+	function checkUser() {
+		var user = document.getElementById("user");
+		var user_prompt = document.getElementById("user_prompt");
+		var str = user.value;
+		var reg = new RegExp("^[a-zA-Z][a-zA-Z0-9_]{3,16}");
+
+		flag1 = reg.test(str);
+
+		if(flag1){
+			user_prompt.innerHTML = "<p style='color: green'>通过</p>";
+		}else{
+			user_prompt.innerHTML = "<p style='color: red'>用户名由字母开头的4~16位数字组成</p>";
+		}
+	}
+	function checkPwd() {
+		var pwd = document.getElementById("pwd");
+		var pwd_prompt = document.getElementById("pwd_prompt");
+		var str = pwd.value;
+		var reg = new RegExp("^[a-zA-Z_]{4,10}$")
+
+		flag2 = reg.test(str);
+
+		if(flag2){
+			pwd_prompt.innerHTML = "<p style='color: green'>通过</p>";
+		}else{
+			pwd_prompt.innerHTML = "<p  style='color: red'>密码由4-10位字母和下划线组成</p>";
+		}
+	}
+
+	$(document).ready(function() {
+	var sub = document.getElementById("sub");
+
+	sub.onclick = function() {
+		if(flag1 && flag2){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+	});
+
+	</script>
+</head>
+
+<body>
+<div class="main"><img src="images/top.jpg"  alt="top"/>
+	<form action="www.helloworld.com" method="post" id="myform">
+		<dl>
+			<dt class="left">用户名：</dt>
+			<dd><input id="user" type="text" class="inputs" onblur="checkUser()" onfocus="showUser()" /><div id="user_prompt" class="prompt"></div></dd>
+		</dl>
+		<dl>
+			<dt class="left">密码：</dt>
+			<dd><input id="pwd" type="password"  class="inputs" onblur="checkPwd()" onfocus="showPwd()" /><div id="pwd_prompt" class="prompt"></div></dd>
+		</dl>
+		<dl>
+			<dt class="left">&nbsp;</dt>
+			<dd><input name="" type="image" src="images/sumbit_btn.jpg" id="sub" /></dd>
+		</dl>
+	</form>
+</div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>京东注册页面</title>
+    <link href="css/leisure.css" rel="stylesheet">
+</head>
+<body>
+    <div id="header" class="main">
+        <div id="headerLeft">
+            <img src="images/JDicon.png" />
+        </div>
+        <div id="headerRight">注册 | 登录 | 帮助</div>
+    </div>
+    <div class="register">
+        <form method="post" name="myform" id="myform" action="">
+                <h1 class="bold">注册京东会员</h1>
+                <dl>
+                    <dt>您的Email：</dt>
+                    <dd><input id="email" type="text" class="inputs" /></dd>
+                </dl>
+                <dl>
+                    <dt>输入密码：</dt>
+                    <dd><input id="pwd" type="password" class="inputs" /></dd>
+                </dl>
+                <dl>
+                    <dt>再输入一遍密码：</dt>
+                    <dd><input id="repwd" type="password" class="inputs" /></dd>
+                </dl>
+                <dl>
+                    <dt>您的姓名：</dt>
+                    <dd><input id="user" type="text" class="inputs" /></dd>
+                </dl>
+                <dl>
+                    <dt>性别：</dt>
+                    <dd>
+                        <input name="sex" type="radio" value="1" checked="checked" />男
+                        <input name="sex" type="radio" value="0" />女</dd>
+                </dl>
+                <dl>
+                    <dt class="left">出生日期：</dt>
+                    <dd><select name="year">
+                            <option value="1998">1998</option>
+                        </select>年
+                         <select name="month">
+                             <option value="1">1</option>
+                         </select>月
+                       <select name="day">
+                           <option value="12">12</option>
+                       </select>日</dd>
+                </dl>
+                <dl>
+                    <dt>&nbsp;</dt>
+                    <dd><input name="btn" type="submit" value="注册" class="rb1" /></dd>
+                </dl>
+        </form>
+    </div>
+    <div id="footer" class="main"><a href="#">关于我们</a> | <a href="#">诚聘英才</a> |<a href="#"> 联系方式</a>  | <a href="#">帮助中心</a></div>
+   <script src="js/jquery-1.12.4.js"></script>
+
+</body>
+</html>
