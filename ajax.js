@@ -1,5 +1,4 @@
 function ajax(json){
-
     if(window.XMLHttpRequest){
         var ajax = new XMLHttpRequest();
     }
@@ -38,3 +37,5 @@ function ajax(json){
         return arr.join('&');
     }
 }
+
+//ajax({url: , data: , method, suc(), err()});
