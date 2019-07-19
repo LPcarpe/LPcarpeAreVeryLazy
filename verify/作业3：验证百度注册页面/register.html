@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+<title>百度注册页面</title>
+	<link href="css/reg.css" rel="stylesheet">
+	<script src="js/jquery-1.12.4.js"></script>
+</head>
+
+<body>
+<div class="register">
+	<div class="center"><img src="images/header1.jpg" /></div>
+  <form action="success.html" method="post" id="myform">
+	  <dl>
+		  <dt>用户名：</dt>
+		  <dd><input id="user" type="text"  class="inputs"/><div id="userId"></div></dd>
+	  </dl>
+	  <dl>
+		  <dt>密码：</dt>
+		  <dd><input id="pwd" type="password"  class="inputs"/><div id="pwdId"></div></dd>
+	  </dl>
+	  <dl>
+		  <dt>确认密码：</dt>
+		  <dd><input id="repwd" type="password"  class="inputs"/><div id="repwdId"></div></dd>
+	  </dl>
+	  <dl>
+		  <dt>性别：</dt>
+		  <dd><input  name="sex" type="radio" value="男" />男 <input name="sex" type="radio" value="女" />女
+			  <div id="sexId"></div></dd>
+	  </dl>
+	  <dl>
+		  <dt>电子邮件：</dt>
+		  <dd><input id="email" type="text"  class="inputs"/><div id="emailId"></div></dd>
+	  </dl>
+	  <dl>
+		  <dt>出生日期：</dt>
+		  <dd><select id="year">
+			  <script>
+				  for(var i=1900;i<=2015;i++){
+					  document.write("<option value="+i+">"+i+"</option>");
+				  }
+			  </script>
+		  </select>年
+			  <select id="month">
+				  <script>
+					  for(var i=1;i<=12;i++){
+						  document.write("<option value="+i+">"+i+"</option>");
+					  }
+				  </script>
+			  </select>月
+			  <select id="day">
+				  <script>
+					  for(var i=1;i<=31;i++){
+						  document.write("<option value="+i+">"+i+"</option>");
+					  }
+				  </script>
+			  </select>日</dd>
+	  </dl>
+	  <dl>
+		  <dt>&nbsp;</dt>
+		  <dd><input name="sub" type="submit" value="注册" class="btn" id="sub" /> <input name="cancel" type="reset" value="清除"  class="btn"/></dd>
+	  </dl>
+  </form>
+</div>
+<script>
+$(document).ready(function() {
+	var user = document.getElementById("user");
+	var userId = document.getElementById("userId");
+	var pwd = document.getElementById("pwd");
+	var pwdId = document.getElementById("pwdId");
+	var repwd = document.getElementById("repwd");
+	var repwdId = document.getElementById("repwdId");
+	var sex = document.getElementsByName("sex");
+	var sexId = document.getElementById("sexId");
+	var email = document.getElementById("email");
+	var emailId = document.getElementById("emailId");
+	var sub = document.getElementById('sub');
+	//var sub = document.getElementsByName('sub');  无法用这个绑定事件？ Elements ?
+
+	var flag1,flag2,flag3,flag4,flag5;
+	
+
+	function checkUser() {
+		var str = user.value;
+		var exp = new RegExp("^[a-zA-Z_]{5,16}$");
+		flag1 = exp.test(str);
+
+		if(!flag1){
+			userId.innerHTML = "<p style='color:red'>用户名必须为以字母开头，由5～16为字母、下划线组成</p>"
+		}else{
+			userId.innerHTML = "<p style='color: green'>通过验证</p>"
+		}
+	}
+
+	function checkPwd() {
+		var str = pwd.value;
+		var reg = new RegExp("^[a-zA-Z0-9]{4,10}$");
+		flag2 = reg.test(str);
+		if(!flag2){
+			pwdId.innerHTML = "<p style='color: red'>密码必须为4～10个由字母或数字组成</p>";
+		}else{
+			pwdId.innerHTML = "<p style='color:green'>通过验证</p>";
+		}
+	}
+
+	function checkRepwd() {
+		var str1 = pwd.value;
+		var str2 = repwd.value;
+
+		flag3 = (str1 == str2);
+
+		if(!flag3){
+			repwdId.innerHTML = "<p style='color:red'>两次输入的密码不一致</p>";
+
+		}else{
+			if(str1 == ''){
+				flag3 = false;
+				pwdId.innerHTML = "<p style='color: red'>请输入你的密码</p>";
+			}else{
+				repwdId.innerHTML = "<p style='color: green'>通过验证</p>";
+			}
+			
+		}
+	}
+
+	function checkEmail() {
+		var str = email.value;
+		var reg = new RegExp("^[a-zA-Z0-9]*@[a-zA-Z0-9]*\.com");
+
+		flag4 = reg.test(str);
+
+		if(!flag4){
+			emailId.innerHTML = "<p style='color: red'>邮箱格式不正确</p>";
+		}else{
+			emailId.innerHTML = "<p style='color: green'>通过验证</p>";
+		}
+	}
+
+	function checkSex() {
+		flag5 = (sex[0].checked || sex[1].checked);
+		if(!flag5){
+			sexId.innerHTML = "<p style='color: red'>你还未选择你的性别</p>";
+		}else{
+			sexId.innerHTML = "<p style='color: green'>通过验证</p>";
+		}
+	}
+
+
+	for(var i=0; i<sex.length; i++){
+		sex[i].onclick = function() {
+			checkSex();
+		}
+	}
+	user.onblur = function() {
+		checkUser();
+	}
+	pwd.onblur = function() {
+		checkPwd();
+	}
+	repwd.onblur = function() {
+		checkRepwd();
+	}
+	email.onblur = function() {
+		checkEmail();
+	}
+	sub.onclick = function() {
+		if(flag1 && flag2 && flag3 && flag4 && flag5){
+			return true;
+		}else{
+			return false;
+		}
+		
+	}
+
+});
+</script>
+</body>
+</html>

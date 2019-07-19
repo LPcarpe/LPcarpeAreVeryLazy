@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+<title>使用正则表达式验证表单内容</title>
+	<link href="css/reg.css" rel="stylesheet">
+	<script src="js/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+	var flag1,flag2,flag3,flag4,flag5;
+
+	function checkUser() {
+		var user = document.getElementById("user");
+		var user_prompt = document.getElementById("user_prompt");
+		var str = user.value;
+		var reg = new RegExp("^[a-zA-Z][a-zA-Z0-9_]{3,16}");
+
+		flag1 = reg.test(str);
+
+		if(flag1){
+			user_prompt.innerHTML = "<p style='color: green'>通过</p>";
+		}else{
+			user_prompt.innerHTML = "<p style='color: red'>用户名由字母开头的4~16位数字组成</p>";
+		}
+	}
+
+	function checkEmail() {
+		var email = document.getElementById("email");
+		var email_prompt = document.getElementById("email_prompt");
+		var str = email.value;
+		var reg = new RegExp("^[a-zA-Z0-9]*@[a-zA-Z0-9]*\.com$")
+
+		flag2 = reg.test(str);
+
+		if(flag2){
+			email_prompt.innerHTML = "<p style='color: green'>通过</p>";
+		}else{
+			email_prompt.innerHTML = "<p style='color: red'>邮箱格式不正确</p>";
+		}
+	}
+
+	function checkMobile() {
+		var mobile = document.getElementById("mobile");
+		var mobile_prompt = document.getElementById("mobile_prompt");
+		var str = mobile.value;
+		var reg = new RegExp("[0-9]{11}");
+
+		flag3 = reg.test(str);
+
+		if(flag3){
+			mobile_prompt.innerHTML = "<p style='color: green'>通过</p>";
+		}else{
+			mobile_prompt.innerHTML = "<p style='color: red'>请输入11位的正确手机号码</p>";
+		}
+	}
+
+	function checkPwd() {
+		var pwd = document.getElementById("pwd");
+		var pwd_prompt = document.getElementById("pwd_prompt");
+		var str = pwd.value;
+		var reg = new RegExp("^[a-zA-Z_]{4,10}$")
+
+		flag4 = reg.test(str);
+
+		if(flag4){
+			pwd_prompt.innerHTML = "<p style='color: green'>通过</p>";
+		}else{
+			pwd_prompt.innerHTML = "<p  style='color: red'>密码由4-10位字母和下划线组成</p>";
+		}
+	}
+
+	function checkRepwd() {
+		var pwd = document.getElementById("pwd");
+		var repwd = document.getElementById("repwd");
+		var repwd_prompt = document.getElementById("repwd_prompt");
+		var str1 = pwd.value;
+		var str2 = repwd.value;
+
+		flag5 = (str1 == str2);
+
+		if(flag5){
+			if(str1 == ''){
+				repwd_prompt.innerHTML = "<p style='color: red'>请输入你的密码</p>";
+				return false;
+			}else{
+				repwd_prompt.innerHTML = "<p style='color: green'>通过</p>";
+			}
+		}else{
+			repwd_prompt.innerHTML = "<p style='color: red'>两次输入的密码不一致</p>";
+		}
+	}
+
+$(document).ready(function() {
+	var sub = document.getElementById("sub");
+
+	sub.onclick = function() {
+		if(flag1 && flag2 && flag3 && flag4 && flag5){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+});
+</script>
+</head>
+
+<body>
+<div class="main"><img src="images/logo.jpg" alt="logo"/>
+	<form action="www.imooc.com" id="myform" method="post">
+		<dl>
+			<dt>用户名：</dt>
+			<dd><input id="user" type="text" class="inputs" onblur="checkUser()"/><div id="user_prompt"></div></dd>
+		</dl>
+		<dl>
+			<dt>Email地址：</dt>
+			<dd><input id="email" type="text" class="inputs" onblur="checkEmail()" /><div id="email_prompt"></div></dd>
+		</dl>
+		<dl>
+			<dt>手机号码：</dt>
+			<dd><input id="mobile" type="text" class="inputs" onblur="checkMobile()" /><div id="mobile_prompt"></div></dd>
+		</dl>
+		<dl>
+			<dt>登录密码：</dt>
+			<dd><input id="pwd" type="password"  class="inputs" onblur="checkPwd()" /><div id="pwd_prompt"></div></dd>
+		</dl>
+		<dl>
+			<dt>密码确认：</dt>
+			<dd><input id="repwd" type="password"  class="inputs" onblur="checkRepwd()" /><div id="repwd_prompt"></div></dd>
+		</dl>
+		<dl>
+			<dt>&nbsp;</dt>
+			<dd><input name="" type="image" src="images/login.jpg" id="sub" /></dd>
+		</dl>
+	</form>
+
+</div>
+</body>
+</html>
